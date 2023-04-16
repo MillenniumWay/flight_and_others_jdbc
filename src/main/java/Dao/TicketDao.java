@@ -22,6 +22,12 @@ public class TicketDao {
 
     private final String DELETE_TICKET_BY_ID = "DELETE FROM ticket WHERE id=?";
 
+    private final String NAMES = "SELECT passenger_name FROM ticket GROUP BY passenger_name ORDER BY COUNT(*) DESC;";
+
+    private final String TICKETS = "SELECT  MAX(passenger_name) AS Name, COUNT(passenger_name) AS Count\n" +
+            "FROM ticket GROUP BY  (passenger_name);";
+
+
     public Connection getConnection() throws SQLException {
         Connection connection = null;
         try  {connection = ConnectionManager.open();
@@ -30,6 +36,45 @@ public class TicketDao {
         }
         return connection;
     }
+   public List<Ticket> namesOfPassenger () throws  SQLException {
+        ArrayList<Ticket> tickets = new ArrayList<>();
+        try (Connection connection =getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(NAMES);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String passenger_name = resultSet.getString("passenger_name");
+                tickets.add(new Ticket(passenger_name));
+            } tickets.stream().forEach(x-> System.out.println(x.toString()));
+        } return tickets;
+   }
+
+   public List<Ticket> howManyTickets () throws SQLException {
+        ArrayList<Ticket> tickets = new ArrayList<>();
+        try (Connection connection = getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(TICKETS);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                String passenger_name = resultSet.getString("name");
+                int count = resultSet.getInt("count");
+                tickets.add(new Ticket(passenger_name,count));
+            } tickets.stream().forEach(x-> System.out.println("Names:  " + x.getPassenger_name() + "  " +  "Count: " + x.getCount_for_sql()));
+         }return tickets;
+   }
+
+    public void updateTicketById(int id,String passport_no,String passenger_name,
+                                 int flight_id, String seat_no, double cost) throws SQLException {
+        try (Connection connection = getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_TICKET_BY_ID);
+            preparedStatement.setString(1,passport_no);
+            preparedStatement.setString(2,passenger_name);
+            preparedStatement.setInt(3,flight_id);
+            preparedStatement.setString(4,seat_no);
+            preparedStatement.setDouble(5, cost);
+            preparedStatement.setInt(6, id);
+            preparedStatement.executeUpdate();
+        }
+    }
+
 
     public void addNewTicket(String passport_no, String passenger_name,
                              int flight_id, String seat_no, double cost) throws SQLException {
@@ -61,19 +106,6 @@ public class TicketDao {
              } return tickets;
          }
 
-         public void updateTicketById(int id,String passport_no,String passenger_name,
-                                      int flight_id, String seat_no, double cost) throws SQLException {
-         try (Connection connection = getConnection()){
-             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_TICKET_BY_ID);
-             preparedStatement.setString(1,passport_no);
-             preparedStatement.setString(2,passenger_name);
-             preparedStatement.setInt(3,flight_id);
-             preparedStatement.setString(4,seat_no);
-             preparedStatement.setDouble(5, cost);
-             preparedStatement.setInt(6, id);
-             preparedStatement.executeUpdate();
-         }
-    }
 
     public void deleteFromTicketById(int id) throws SQLException{
         try (Connection connection = getConnection()){

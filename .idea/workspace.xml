@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bfeebab8-ba99-4cae-b987-ea3dcf7a18a7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/AircraftDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/AirportDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/FlightDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/SeatDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/TicketDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Aircraft.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Airport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Flight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Seat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Models/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="bfeebab8-ba99-4cae-b987-ea3dcf7a18a7" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/FlightDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/FlightDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/TicketDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/TicketDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Runner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/quali/JDBCFirstApplication",
+    "last_opened_file_path": "C:/Users/quali/flight_and_others_jdbc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,11 +89,24 @@
       <option name="presentableId" value="Default" />
       <updated>1681564955599</updated>
       <workItem from="1681564957125" duration="8852000" />
-      <workItem from="1681583180769" duration="2927000" />
+      <workItem from="1681583180769" duration="4157000" />
+      <workItem from="1681666478742" duration="1762000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1681586282613</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681586282613</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
 </project>

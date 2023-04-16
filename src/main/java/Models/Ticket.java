@@ -7,6 +7,16 @@ public class Ticket {
     int flight_id;
     String seat_no;
     double cost;
+    int count_for_sql;
+
+    public Ticket( String passenger_name, int count_for_sql) {
+        this.passenger_name = passenger_name;
+        this.count_for_sql = count_for_sql;
+    }
+
+    public Ticket(String passenger_name) {
+        this.passenger_name = passenger_name;
+    }
 
     public Ticket(String passport_no, String passenger_name, int flight_id, String seat_no) {
         this.passport_no = passport_no;
@@ -34,6 +44,14 @@ public class Ticket {
         this.cost = cost;
     }
 
+    public int getCount_for_sql() {
+        return count_for_sql;
+    }
+
+    public void setCount_for_sql(int count_for_sql) {
+        this.count_for_sql = count_for_sql;
+    }
+
     @Override
     public String toString() {
         return "Ticket{" +
@@ -43,6 +61,7 @@ public class Ticket {
                 ", flight_id=" + flight_id +
                 ", seat_no='" + seat_no + '\'' +
                 ", cost=" + cost +
+                ", count_for_sql=" + count_for_sql +
                 '}';
     }
 

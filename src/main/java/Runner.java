@@ -16,5 +16,7 @@ public class Runner {
         FlightDao flightDao = new FlightDao();
         SeatDao seatDao = new SeatDao();
         TicketDao ticketDao = new TicketDao();
+
+        ticketDao.howManyTickets();
     }
 }

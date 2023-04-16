@@ -20,6 +20,7 @@ public class FlightDao {
     private final String DELETE_FLIGHT_BY_ID = "DELETE FROM flight WHERE id=?";
 
 
+
     public Connection getConnection() throws SQLException {
         Connection connection = null;
         try  {connection = ConnectionManager.open();
